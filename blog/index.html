@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artikel & Wawasan - ISPARIVA</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(180deg, #F1F8E9 0%, #F4FBF7 100%);
+            color: #4a5568;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .social-icons-flex {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+            justify-content: flex-start;
+        }
+        .social-icon-btn {
+            width: 40px;
+            height: 40px;
+            background: #F4FBF7;
+            border: 1px solid #E2E8F0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #002d72;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .social-icon-btn:hover {
+            background: #002d72;
+            color: #FFFFFF;
+        }
+
+        .main-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .content-card-box {
+            background: #FFFFFF;
+            border-radius: 24px;
+            padding: 50px 45px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+            margin-bottom: 35px;
+            border: 1px solid rgba(0,0,0,0.02);
+        }
+        .page-header-box {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .page-header-box .sub-tag {
+            color: #2e7d32;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            display: inline-block;
+            margin-bottom: 8px;
+        }
+        .page-header-box h1 {
+            color: #0d47a1;
+            font-size: 2.2rem;
+            margin: 0;
+            font-weight: 800;
+        }
+        /* Banner Maskot dengan Latar Belakang Lingkaran Penopang */
+        .mascot-banner {
+            background: #F8FBF9;
+            border-radius: 18px;
+            padding: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            margin-bottom: 30px;
+            border: 1px solid #E2E8F0;
+            border-left: 6px solid #2e7d32;
+        }
+        .mascot-banner-text {
+            flex-grow: 1;
+        }
+        .mascot-banner h4 {
+            color: #0d47a1;
+            margin: 0 0 5px 0;
+            font-size: 1.15rem;
+            font-weight: 700;
+        }
+        .mascot-banner p {
+            margin: 0;
+            color: #555;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .mascot-circle-bg {
+            flex-shrink: 0;
+            width: 100px;
+            height: 100px;
+            background: #E8F5E9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .mascot-circle-bg img {
+            max-height: 115px;
+            width: auto;
+            position: absolute;
+            bottom: 0;
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.15));
+        }
+
+        /* Styling Tombol Audio Melayang (Floating Audio Control) */
+        .audio-control-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #0d47a1;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .audio-control-btn:hover {
+            background-color: #2e7d32;
+            transform: scale(1.05);
+        }
+
+        .article-list { display: flex; flex-direction: column; gap: 15px; }
+        .article-item {
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 20px 25px; background: #FFFFFF; border: 1px solid #EAEAEA;
+            border-radius: 15px; text-decoration: none; color: inherit; transition: all 0.25s ease;
+        }
+        .article-item:hover {
+            background: #F0F7FF; border-color: #0288d1;
+            transform: translateX(5px); box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+        }
+        .article-left { display: flex; align-items: center; gap: 25px; }
+        .article-number { font-size: 1.25rem; font-weight: 700; color: #0288d1; }
+        .article-info h4 { margin: 0 0 5px 0; color: #0d47a1; font-size: 1.05rem; }
+        .article-info p { margin: 0; font-size: 0.85rem; color: #666; }
+        .article-arrow { font-size: 1.1rem; color: #0d47a1; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <header style="background: #ffffff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea;">
+        <div class="logo-wrapper">
+            <a href="../index.html">
+                <img src="../assets/img/logo.png" alt="Logo ISPARIVA" style="height: 38px; width: auto; display: block; object-fit: contain;">
+            </a>
+        </div>
+        <nav style="display: flex; gap: 25px;">
+            <a href="../index.html" style="text-decoration: none; color: #555; font-weight: 500;">Beranda</a>
+            <a href="../tentang.html" style="text-decoration: none; color: #555; font-weight: 500;">Tentang Kami</a>
+            <a href="index.html" style="text-decoration: none; color: #0d47a1; font-weight: 700;">Artikel</a>
+        </nav>
+    </header>
+
+    <div class="main-container">
+        
+        <div class="content-card-box">
+            
+            <div class="page-header-box">
+                <span class="sub-tag">Artikel & Wawasan</span>
+                <h1>Informasi Kesehatan</h1>
+            </div>
+
+            <div class="mascot-banner">
+                <div class="mascot-banner-text">
+                    <h4>Kumpulan Bacaan Pilihan</h4>
+                    <p>Temukan berbagai artikel edukasi seputar pernapasan dan pencegahan ISPA yang disusun langsung oleh tim.</p>
+                </div>
+                <div class="mascot-circle-bg">
+                    <img src="../assets/img/maskot1.png" alt="Maskot Catatan">
+                </div>
+            </div>
+
+            <div class="article-list">
+                <a href="https://www.kompasiana.com/refalina9107/6a959a35c925c41ec91c9dba/napasku-ketika-udara-yang-kita-hirup-bisa-mengganggu-pernapasan#goog_rewarded" target="_blank" class="article-item">
+                    <div class="article-left">
+                        <span class="article-number">01</span>
+                        <div class="article-info">
+                            <h4>Napasku Ketika Udara yang Kita Hirup Bisa Mengganggu Pernapasan</h4>
+                            <p>Oleh: Refalina Muhajidah Jaelani · Kompasiana</p>
+                        </div>
+                    </div>
+                    <div class="article-arrow">↗</div>
+                </a>
+
+                <a href="https://www.kompasiana.com/refalina9107/6a93a5edc925c465ea0f6fc5/cuma-batuk-dan-pilek-kenali-ispa-sebelum-terlambat#goog_rewarded" target="_blank" class="article-item">
+                    <div class="article-left">
+                        <span class="article-number">02</span>
+                        <div class="article-info">
+                            <h4>Cuma Batuk dan Pilek? Kenali ISPA Sebelum Terlambat</h4>
+                            <p>Oleh: Refalina Muhajidah Jaelani · Kompasiana</p>
+                        </div>
+                    </div>
+                    <div class="article-arrow">↗</div>
+                </a>
+
+                <a href="https://muhamadriko.substack.com/p/napas-sehat-dimulai-dari-kebiasaan-128" target="_blank" class="article-item">
+                    <div class="article-left">
+                        <span class="article-number">03</span>
+                        <div class="article-info">
+                            <h4>Napas Sehat Dimulai dari Kebiasaan</h4>
+                            <p>Oleh: Muhamad Riko Adzrik Fata · Substack</p>
+                        </div>
+                    </div>
+                    <div class="article-arrow">↗</div>
+                </a>
+
+                <a href="https://medium.com/@ssyauqiyah14/tiap-hari-hirup-udara-tapi-udah-tahu-belum-apa-yang-masuk-ke-paru-paru-008df7e11b57" target="_blank" class="article-item">
+                    <div class="article-left">
+                        <span class="article-number">04</span>
+                        <div class="article-info">
+                            <h4>Tiap Hari Hirup Udara, tapi Udah Tahu Belum Apa yang Masuk ke Paru-Paru?</h4>
+                            <p>Oleh: Syifa Syauqiyah Sirojudin · Medium</p>
+                        </div>
+                    </div>
+                    <div class="article-arrow">↗</div>
+                </a>
+
+                <a href="https://substack.com/@ahsania/note/c-324283430?utm_source=notes-share-action&r=8zjv13" target="_blank" class="article-item">
+                    <div class="article-left">
+                        <span class="article-number">05</span>
+                        <div class="article-info">
+                            <h4>Catatan Singkat Kesehatan Pernapasan & Pencegahan ISPA</h4>
+                            <p>Oleh: Ahsania Nadya Putri · Substack Note</p>
+                        </div>
+                    </div>
+                    <div class="article-arrow">↗</div>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Element Audio & Tombol Pemutar Suara ISPARIVA -->
+    <audio id="isparivaAudio" src="assets/audio/ispariva.mp3" preload="auto"></audio>
+    <button id="audioToggleBtn" class="audio-control-btn" onclick="toggleAudio()">
+        <i id="audioIcon" class="fa-solid fa-play"></i>
+        <span id="audioText">Putar Musik</span>
+    </button>
+
+    <!-- Footer Rapi (Hanya Instagram) -->
+    <footer style="background: #FFFFFF; color: #333333; padding: 50px 40px 25px 40px; margin-top: 80px; border-top: 1px solid #EAEAEA;">
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 2fr 1.2fr 1fr; gap: 40px; padding-bottom: 35px; border-bottom: 1px solid #EAEAEA; align-items: start; text-align: left;">
+            
+            <div>
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <img src="../assets/img/logo.png" alt="ISPARIVA Logo" style="height: 24px; width: auto; object-fit: contain;">
+                    <span style="font-weight: 700; color: #002d72; font-size: 1rem;">ISPARIVA Logo</span>
+                </div>
+                <p style="font-size: 0.9rem; color: #555555; line-height: 1.5; margin: 0 0 12px 0;">Informasi Sehat Pencegahan dan Respons Infeksi Respirasi yang Akurat.</p>
+                <p style="color: #00875a; font-weight: 700; margin: 0; font-size: 0.9rem;">"Kenali. Cegah. Jaga Pernapasan."</p>
+            </div>
+            
+            <div>
+                <h5 style="color: #002d72; font-size: 1rem; margin-top: 0; margin-bottom: 12px; font-weight: 700;">Afiliasi Institusi</h5>
+                <p style="font-size: 0.9rem; color: #555555; line-height: 1.5; margin: 0 0 4px 0;">Promosi Kesehatan</p>
+                <p style="font-size: 0.9rem; font-weight: 700; color: #002d72; margin: 0;">POLTEKKES KEMENKES BANDUNG</p>
+            </div>
+
+            <div>
+                <h5 style="color: #002d72; font-size: 1rem; margin-top: 0; margin-bottom: 12px; font-weight: 700;">Media Sosial</h5>
+                <div style="display: flex; gap: 10px; margin-top: 8px; justify-content: flex-start;">
+                    <a href="https://www.instagram.com/ispa.riva?stkn=MTZ3aDNnMjVvY2Jsdg==" target="_blank" style="width: 40px; height: 40px; background: #F4FBF7; border: 1px solid #E2E8F0; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #002d72; text-decoration: none;" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <!-- Tombol WhatsApp Bot (Diperbaiki) -->
+                    <a href="https://wa.me/6281573525417?text=Halo%20ISPARIVA,%20saya%20ingin%20berkonsultasi" target="_blank" class="social-icon-btn" title="WhatsApp Bot">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <div style="text-align: center; padding-top: 20px; font-size: 0.85rem; color: #666666;">
+            &copy; 2026 ISPARIVA. All rights reserved. Developed with G-Loop Method.
+        </div>
+    </footer>
+
+    <!-- Script Kontrol Audio & localStorage -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById('isparivaAudio');
+            var icon = document.getElementById('audioIcon');
+            var text = document.getElementById('audioText');
+            
+            if (!audio) return;
+
+            // Ambil status dan waktu terakhir dari localStorage
+            var isPlaying = localStorage.getItem('ispariva_playing') === 'true';
+            var savedTime = parseFloat(localStorage.getItem('ispariva_time')) || 0;
+
+            audio.currentTime = savedTime;
+
+            if (isPlaying) {
+                audio.play().then(() => {
+                    if (icon) icon.className = 'fa-solid fa-pause';
+                    if (text) text.textContent = 'Matikan Musik';
+                }).catch(err => {
+                    console.log("Autoplay dicegah browser:", err);
+                });
+            }
+
+            // Simpan posisi waktu lagu secara berkala saat diputar
+            audio.addEventListener('timeupdate', function() {
+                localStorage.setItem('ispariva_time', audio.currentTime);
+            });
+        });
+
+        function toggleAudio() {
+            var audio = document.getElementById('isparivaAudio');
+            var icon = document.getElementById('audioIcon');
+            var text = document.getElementById('audioText');
+
+            if (audio.paused) {
+                audio.play();
+                icon.className = 'fa-solid fa-pause';
+                text.textContent = 'Matikan Musik';
+                localStorage.setItem('ispariva_playing', 'true');
+            } else {
+                audio.pause();
+                icon.className = 'fa-solid fa-play';
+                text.textContent = 'Putar Musik';
+                localStorage.setItem('ispariva_playing', 'false');
+            }
+        }
+
+        // Mengembalikan ikon tombol jika lagu selesai diputar
+        document.getElementById('isparivaAudio').addEventListener('ended', function() {
+            var icon = document.getElementById('audioIcon');
+            var text = document.getElementById('audioText');
+            if (icon) icon.className = 'fa-solid fa-play';
+            if (text) text.textContent = 'Putar Musik';
+            localStorage.setItem('ispariva_playing', 'false');
+        });
+    </script>
+
+</body>
+</html>

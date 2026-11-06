@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta name="google-site-verification" content="E10XSWQn_3glkpOE6HOVVzt_y39Ld0RoHYZvGZ7qlZE" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISPARIVA - Informasi Sehat Pencegahan & Respons ISPA</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(180deg, #F1F8E9 0%, #F4FBF7 100%);
+            color: #4a5568;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, #E3F2FD 0%, #E8F5E9 100%);
+            padding: 60px 40px;
+            border-bottom: 1px solid #EAEAEA;
+        }
+        .hero-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text-content {
+            max-width: 580px;
+        }
+        .hero-badge {
+            background: #E8F5E9;
+            color: #2e7d32;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-bottom: 15px;
+            border: 1px solid #C8E6C9;
+        }
+        .hero-text-content h1 {
+            color: #0d47a1;
+            font-size: 2.3rem;
+            margin: 0 0 15px 0;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .hero-text-content h1 span {
+            color: #2e7d32;
+        }
+        .hero-text-content p {
+            color: #555555;
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+        }
+        .hero-btn {
+            background: #0d47a1;
+            color: #FFFFFF;
+            padding: 12px 28px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(13, 71, 161, 0.2);
+            transition: background 0.2s;
+        }
+        .hero-btn:hover {
+            background: #002d72;
+        }
+
+        .hero-mascot-area {
+            flex-shrink: 0;
+            text-align: center;
+            position: relative;
+            width: 280px;
+            height: 280px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.03);
+            border: 2px dashed #B0BEC5;
+        }
+        .hero-mascot-area img {
+            max-height: 250px;
+            width: auto;
+            display: block;
+            filter: drop-shadow(0 10px 15px rgba(0,0,0,0.15));
+        }
+
+        /* Kartu Fitur: Frame Lebih Panjang & Maskot Proporsional */
+        .features-container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        .card {
+            background: #FFFFFF;
+            border-radius: 20px;
+            padding: 35px 30px; /* Padding ditambah agar frame lebih panjang dan proporsional */
+            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
+            border: 1px solid #EAEAEA;
+            border-left: 6px solid #2e7d32;
+            display: flex;
+            align-items: center; /* Posisi vertikal sejajar tengah dengan maskot */
+            gap: 25px;
+        }
+        .card:nth-child(2) {
+            border-left-color: #0288d1;
+        }
+        
+        /* Ukuran Lingkaran dan Maskot Diperbesar agar Pas */
+        .mascot-circle-bg {
+            flex-shrink: 0;
+            width: 90px;
+            height: 90px;
+            background: #E3F2FD;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        .mascot-circle-bg img {
+            max-height: 105px; /* Maskot diperbesar memenuhi lingkaran */
+            width: auto;
+            position: absolute;
+            bottom: 0;
+            filter: drop-shadow(0 4px 6px rgba(0,0,0,0.12));
+        }
+
+        /* Footer Sesuai Referensi Rata Kiri (Hanya Instagram) */
+        .new-footer {
+            background: #FFFFFF;
+            color: #333333;
+            padding: 50px 40px 25px 40px;
+            margin-top: 80px;
+            border-top: 1px solid #EAEAEA;
+        }
+        .footer-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 2fr 1.2fr 1fr;
+            gap: 40px;
+            padding-bottom: 35px;
+            border-bottom: 1px solid #EAEAEA;
+            align-items: start;
+            text-align: left;
+        }
+        .footer-col h5 {
+            color: #002d72;
+            font-size: 1rem;
+            margin-top: 0;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .footer-col p {
+            font-size: 0.9rem;
+            color: #555555;
+            line-height: 1.5;
+            margin-bottom: 12px;
+            margin-top: 0;
+        }
+        .social-icons-flex {
+            display: flex;
+            gap: 10px;
+            margin-top: 8px;
+            justify-content: flex-start;
+        }
+        .social-icon-btn {
+            width: 40px;
+            height: 40px;
+            background: #F4FBF7;
+            border: 1px solid #E2E8F0;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #002d72;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+        .social-icon-btn:hover {
+            background: #002d72;
+            color: #FFFFFF;
+        }
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #666666;
+        }
+
+        /* Styling Tombol Audio Melayang (Floating Audio Control) */
+        .audio-control-btn {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #0d47a1;
+            color: #FFFFFF;
+            border: none;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 9999;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .audio-control-btn:hover {
+            background-color: #2e7d32;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .hero-container { flex-direction: column; text-align: center; }
+            .hero-text-content { max-width: 100%; }
+            .hero-mascot-area { margin: 0 auto; }
+            .card-grid { grid-template-columns: 1fr; }
+            .footer-container { grid-template-columns: 1fr; gap: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header style="background: #ffffff; padding: 15px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eaeaea;">
+        <div class="logo-wrapper">
+            <a href="index.html">
+                <img src="assets/img/logo.png" alt="Logo ISPARIVA" style="height: 38px; width: auto; display: block; object-fit: contain;">
+            </a>
+        </div>
+        <nav style="display: flex; gap: 25px;">
+            <a href="index.html" style="text-decoration: none; color: #0d47a1; font-weight: 700;">Beranda</a>
+            <a href="tentang.html" style="text-decoration: none; color: #555; font-weight: 500;">Tentang Kami</a>
+            <a href="blog/index.html" style="text-decoration: none; color: #555; font-weight: 500;">Artikel</a>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-container">
+            <div class="hero-text-content">
+                <span class="hero-badge">Kenali, Cegah, dan Jaga Pernapasan</span>
+                <h1>ISPA BUKAN ALASAN, <br><span>NAPAS SEHAT</span> AKTIVITAS LANCAR!</h1>
+                <p>Tingkatkan kesadaran gejala ISPA sejak dini. Lindungi diri, keluarga, dan lingkungan dengan informasi kesehatan respirasi yang akurat dan terpercaya.</p>
+                <a href="blog/index.html" class="hero-btn">Artikel ISPARIVA <i class="fa-solid fa-arrow-down"></i></a>
+            </div>
+            <div class="hero-mascot-area">
+                <img src="assets/img/maskot5.png" alt="Maskot ISPARIVA">
+            </div>
+        </div>
+    </section>
+
+    <!-- Kartu Fitur Beranda -->
+    <div class="features-container">
+        <div class="card-grid">
+            <!-- Kartu 1: Deteksi Dini -->
+            <div class="card">
+                <div class="mascot-circle-bg">
+                    <img src="assets/img/maskot.webp" alt="Maskot Deteksi Dini">
+                </div>
+                <div>
+                    <h3 style="color: #0d47a1; margin: 0 0 8px 0; font-size: 1.15rem;">Deteksi Dini</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95rem; line-height: 1.5;">Kenali tanda dan gejala awal gangguan saluran pernapasan dengan panduan terpercaya.</p>
+                </div>
+            </div>
+
+            <!-- Kartu 2: Edukasi Interaktif -->
+            <div class="card">
+                <div class="mascot-circle-bg" style="background: #E0F7FA;">
+                    <img src="assets/img/maskot3.png" alt="Maskot Edukasi Interaktif">
+                </div>
+                <div>
+                    <h3 style="color: #0d47a1; margin: 0 0 8px 0; font-size: 1.15rem;">Edukasi Interaktif</h3>
+                    <p style="margin: 0; color: #555; font-size: 0.95rem; line-height: 1.5;">Penyampaian informasi kesehatan yang ramah, ringan, dan mudah diterapkan sehari-hari.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Element Audio & Tombol Pemutar Suara ISPARIVA -->
+    <audio id="isparivaAudio" src="assets/audio/ispariva.mp3" preload="auto"></audio>
+    <button id="audioToggleBtn" class="audio-control-btn" onclick="toggleAudio()">
+        <i id="audioIcon" class="fa-solid fa-play"></i>
+        <span id="audioText">Putar Musik</span>
+    </button>
+
+    <!-- Footer Rapi Sesuai Referensi -->
+    <footer class="new-footer">
+        <div class="footer-container">
+            <div class="footer-col">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px;">
+                    <img src="assets/img/logo.png" alt="ISPARIVA Logo" style="height: 24px; width: auto; object-fit: contain;">
+                    <span style="font-weight: 700; color: #002d72; font-size: 1rem;">ISPARIVA Logo</span>
+                </div>
+                <p>Informasi Sehat Pencegahan dan Respons Infeksi Respirasi yang Akurat.</p>
+                <p style="color: #00875a; font-weight: 700; margin: 0;">"Kenali. Cegah. Jaga Pernapasan."</p>
+            </div>
+            
+            <div class="footer-col">
+                <h5>Afiliasi Institusi</h5>
+                <p style="margin-bottom: 4px;">Promosi Kesehatan</p>
+                <p style="font-weight: 700; color: #002d72; margin: 0;">POLTEKKES KEMENKES BANDUNG</p>
+            </div>
+
+            <div class="footer-col">
+                <h5>Media Sosial</h5>
+                <div class="social-icons-flex">
+                    <a href="https://www.instagram.com/ispa.riva?stkn=MTZ3aDNnMjVvY2Jsdg==" target="_blank" class="social-icon-btn" title="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <!-- Tombol WhatsApp Bot (Tambahkan di sini) -->
+                    <a href="https://wa.me/6281573525417?text=Halo%20ISPARIVA,%20saya%20ingin%20berkonsultasi" target="_blank" class="social-icon-btn" title="WhatsApp Bot">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 ISPARIVA. All rights reserved. Developed with G-Loop Method.
+        </div>
+    </footer>
+
+    <!-- Script Kontrol Audio & localStorage -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            var audio = document.getElementById('isparivaAudio');
+            var icon = document.getElementById('audioIcon');
+            var text = document.getElementById('audioText');
+            
+            if (!audio) return;
+
+            // Ambil status dan waktu terakhir dari localStorage
+            var isPlaying = localStorage.getItem('ispariva_playing') === 'true';
+            var savedTime = parseFloat(localStorage.getItem('ispariva_time')) || 0;
+
+            audio.currentTime = savedTime;
+
+            if (isPlaying) {
+                audio.play().then(() => {
+                    if (icon) icon.className = 'fa-solid fa-pause';
+                    if (text) text.textContent = 'Matikan Musik';
+                }).catch(err => {
+                    console.log("Autoplay dicegah browser:", err);
+                });
+            }
+
+            // Simpan posisi waktu lagu secara berkala saat diputar
+            audio.addEventListener('timeupdate', function() {
+                localStorage.setItem('ispariva_time', audio.currentTime);
+            });
+        });
+
+        function toggleAudio() {
+            var audio = document.getElementById('isparivaAudio');
+            var icon = document.getElementById('audioIcon');
+            var text = document.getElementById('audioText');
+
+            if (audio.paused) {
+                audio.play();
+                icon.className = 'fa-solid fa-pause';
+                text.textContent = 'Matikan Musik';
+                localStorage.setItem('ispariva_playing', 'true');
+            } else {
+                audio.pause();
+                icon.className = 'fa-solid fa-play';
+                text.textContent = 'Putar Musik';
+                localStorage.setItem('ispariva_playing', 'false');
+            }
+        }
+
+        // Mengembalikan ikon tombol jika lagu selesai diputar
+        document.getElementById('isparivaAudio').addEventListener('ended', function() {
+            var icon = document.getElementById('audioIcon');
+            var text = document.getElementById('audioText');
+            if (icon) icon.className = 'fa-solid fa-play';
+            if (text) text.textContent = 'Putar Musik';
+            localStorage.setItem('ispariva_playing', 'false');
+        });
+    </script>
+
+</body>
+</html>
